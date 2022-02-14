@@ -9,4 +9,4 @@ class Action:
         return final_value
 
     def displayaction(self):
-        print(f'{self.name}, costing {self.value} with a benefit of {self.benefit} after two years ')
+        print(f'{self.name}, costing {self.value}€ with a benefit of {self.benefit} after two years ')
