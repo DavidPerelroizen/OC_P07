@@ -20,10 +20,23 @@ def findallcombinations(actions_list):
                     continue
             final_combinations_list.append(sorted(combination, key=lambda x: x.name))
             final_combinations_names_list.append(sorted(combination_names))
-    final_combinations_names_list_nodupl = []
+    final_combinations_list_nodupl = []
     for item in final_combinations_list:
-        if item not in final_combinations_names_list_nodupl:
-            final_combinations_names_list_nodupl.append(item)
-    return final_combinations_names_list_nodupl
+        if item not in final_combinations_list_nodupl:
+            final_combinations_list_nodupl.append(item)
+    return final_combinations_list_nodupl
+
+
+def combinationranking(combinations_list):
+    combinations_ranking = []
+    for combination in combinations_list:
+        actions_list = []
+        combination_benefit = 0
+        for action in combination:
+            actions_list.append(action.name)
+            combination_benefit += action.finalvalue()
+        combinations_ranking.append((actions_list, combination_benefit))
+    combinations_ranking_final = sorted(combinations_ranking, key=lambda x: -x[1])
+    return combinations_ranking_final
 
 
