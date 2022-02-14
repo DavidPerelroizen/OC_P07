@@ -1,4 +1,5 @@
-from pandas_ods_reader import read_ods
+from Models.action import Action
+import csv
 
 
 class ActionDB:
@@ -6,6 +7,12 @@ class ActionDB:
         self.path = path
         self.sheet_index = sheet_index
 
-    def extractactiondata(self, path, sheet_index):
-        df = read_ods(path, sheet_index)
-        return df
+    def extractdatacsv(self, path):
+        actions_list = []
+        with open(path, 'r') as csvfile:
+            lines = csv.reader(csvfile, delimiter=',')
+            for row in lines:
+                action = Action(row[0], row[1], row[2])
+                actions_list.append(action)
+        actions_list.pop(0)
+        return actions_list
