@@ -1,7 +1,7 @@
 from Models.constants import max_spend_per_customer
 
 
-def brute(actions_list):
+def findallcombinations(actions_list):
     final_combinations_list = []
     final_combinations_names_list = []
     for i in range(len(actions_list)):
