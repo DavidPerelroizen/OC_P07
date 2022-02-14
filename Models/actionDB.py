@@ -8,6 +8,7 @@ class ActionDB:
         self.sheet_index = sheet_index
 
     def extractdatacsv(self, path):
+        """This method enables to extract the data from a csv file and save it as a list of Actions"""
         actions_list = []
         with open(path, 'r') as csvfile:
             lines = csv.reader(csvfile, delimiter=',')
