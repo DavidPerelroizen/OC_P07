@@ -18,10 +18,10 @@ def brute(actions_list):
                     combination_names.append(actions_list[k].name)
                 else:
                     continue
-            final_combinations_list.append(combination)
+            final_combinations_list.append(sorted(combination, key=lambda x: x.name))
             final_combinations_names_list.append(sorted(combination_names))
     final_combinations_names_list_nodupl = []
-    for item in final_combinations_names_list:
+    for item in final_combinations_list:
         if item not in final_combinations_names_list_nodupl:
             final_combinations_names_list_nodupl.append(item)
     return final_combinations_names_list_nodupl
