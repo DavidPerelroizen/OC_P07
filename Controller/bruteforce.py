@@ -32,10 +32,12 @@ def combinationranking(combinations_list):
     for combination in combinations_list:
         actions_list = []
         combination_benefit = 0
+        initial_investment = 0
         for action in combination:
             actions_list.append(action.name)
             combination_benefit += action.finalvalue()
-        combinations_ranking.append((actions_list, combination_benefit))
+            initial_investment += float(action.value)
+        combinations_ranking.append((actions_list, initial_investment, combination_benefit))
     combinations_ranking_final = sorted(combinations_ranking, key=lambda x: -x[1])
     return combinations_ranking_final
 
