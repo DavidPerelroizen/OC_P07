@@ -19,7 +19,8 @@ def main():
         view.displaybestcombination(best_option)
 
     elif user_choice == 'O':
-        best_option = optimizedalgo(actions_list)
+        best_combination = optimizedalgo(actions_list)
+        view.displaybestcombinationoptimized(best_combination)
 
     else:
         exit()
