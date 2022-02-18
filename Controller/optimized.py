@@ -25,5 +25,5 @@ def optimizedalgo(actions_list):
             profit_counter += actions_list_sorted[i][1]
             spend_counter += actions_list_sorted[i][0].value
         i += 1
-
-    return best_option
+    best_combination = (best_option, spend_counter, profit_counter)
+    return best_combination

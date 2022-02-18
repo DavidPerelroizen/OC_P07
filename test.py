@@ -2,20 +2,19 @@ from Models.actionDB import ActionDB
 from Models.action import Action
 from Controller.bruteforce import findallcombinations, combinationranking
 from View.views import View
+from Controller.optimized import optimizedalgo
 
-path = "C:/Users/david/Documents/Openclassrooms/Python/projects/P07/OC_P07_actionDB_test.csv"
-actionDB_1 = ActionDB(path)
+path = "csv_db/dataset1_Python+P7.csv"
+view = View
+action_db = ActionDB(path)
+actions_list = action_db.extractdatacsv()
 
-df = actionDB_1.extractdatacsv()
+best_option = optimizedalgo(actions_list)
+print(best_option)
 
-combination_list = findallcombinations(df)
 
-view = View()
 
-combinations_ranking = combinationranking(combination_list)
 
-for item in combinations_ranking:
-    print(item)
 
 
 
