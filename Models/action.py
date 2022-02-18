@@ -7,8 +7,8 @@ class Action:
     def finalvalue(self):
         """This method provides the final benefit made on an action after two years"""
         action_cost = float(self.value)
-        action_benefit = self.benefit[:-1]
-        final_value = float(action_benefit)*action_cost/100
+        action_benefit = self.benefit
+        final_value = float(action_benefit)*action_cost
         return final_value
 
     def displayaction(self):
