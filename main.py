@@ -5,7 +5,7 @@ from Controller.bruteforce import findallcombinations, combinationranking
 
 def main():
     view = View()
-    path = "OC_P07_actionDB.csv"
+    path = "csv_db/dataset1_Python+P7.csv"
 
     action_db = ActionDB(path)
     actions_list = action_db.extractdatacsv()
