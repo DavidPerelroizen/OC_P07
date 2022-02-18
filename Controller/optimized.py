@@ -14,7 +14,7 @@ def optimizedalgo(actions_list):
     # Step 1: sort the actions_list depending on each action valuated benefit
     actions_list_sorted = sortactionslist(actions_list)
 
-    # Step 2: find the best non-optimal combination by adding the most profitable actions from top to bottom
+    # Step 2: find the best combination by adding the most profitable actions from top to bottom
     profit_counter = 0
     spend_counter = 0
     i = 0
@@ -25,8 +25,5 @@ def optimizedalgo(actions_list):
             profit_counter += actions_list_sorted[i][1]
             spend_counter += actions_list_sorted[i][0].value
         i += 1
-    print(best_option)
-    print(spend_counter)
-    print(profit_counter)
 
     return best_option
