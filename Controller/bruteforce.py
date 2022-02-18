@@ -15,12 +15,12 @@ def findallcombinations(actions_list):
         # In the script below we test the different combinations
         # within the limit of 500€ initial investment
         for j in range(len(actions_list)):
-            counter = int(actions_list[i].value)  # Will help to respect the max 500€ spend per customer
+            counter = float(actions_list[i].value)  # Will help to respect the max 500€ spend per customer
             combination = [actions_list[i]]
 
             for k in range(j, len(actions_list)):
-                if counter + int(actions_list[k].value) <= max_spend_per_customer and k != i:
-                    counter += int(actions_list[k].value)
+                if counter + float(actions_list[k].value) <= max_spend_per_customer and k != i:
+                    counter += float(actions_list[k].value)
                     combination.append(actions_list[k])
                 else:  # If the ceiling of 500€ is reached or if we already used the action we skip
                     continue

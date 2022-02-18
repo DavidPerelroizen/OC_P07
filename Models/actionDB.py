@@ -12,7 +12,7 @@ class ActionDB:
         with open(self.path, 'r') as csvfile:
             lines = csv.reader(csvfile, delimiter=',')
             for row in lines:
-                action = Action(row[0], row[1], row[2])  # Instantiate an Action for each row
+                action = Action(row[0], abs(row[1]), row[2]/100)  # Instantiate an Action for each row
                 actions_list.append(action)
         actions_list.pop(0)  # Remove the database header
         return actions_list
