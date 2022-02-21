@@ -6,7 +6,7 @@ from Controller.optimized import optimizedalgo, optimizatorloop
 
 def main():
     view = View()
-    path = "csv_db/dataset2_Python+P7.csv"
+    path = "csv_db/dataset1_Python+P7.csv"
 
     action_db = ActionDB(path)
     actions_list = action_db.extractdatacsv()
