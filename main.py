@@ -1,12 +1,12 @@
 from View.views import View
 from Models.actionDB import ActionDB
 from Controller.bruteforce import findallcombinations, combinationranking
-from Controller.optimized import optimizedalgo
+from Controller.optimized import optimizedalgo, optimizatorloop
 
 
 def main():
     view = View()
-    path = "csv_db/dataset1_Python+P7.csv"
+    path = "csv_db/dataset2_Python+P7.csv"
 
     action_db = ActionDB(path)
     actions_list = action_db.extractdatacsv()
@@ -19,7 +19,7 @@ def main():
         view.displaybestcombination(best_option)
 
     elif user_choice == 'O':
-        best_combination = optimizedalgo(actions_list)
+        best_combination = optimizatorloop(actions_list)
         view.displaybestcombinationoptimized(best_combination)
 
     else:
