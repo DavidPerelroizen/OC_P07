@@ -19,19 +19,19 @@ def sortactionslist(actions_list):
 def optimizedalgo(actions_list_sorted, first_value_rank):
     best_combination = (0, 0, 0)
 
-    for j in range(first_value_rank + 1, round(len(actions_list_sorted)/2) + 1):
+    for j in range(first_value_rank + 1, len(actions_list_sorted)):
         best_option = [actions_list_sorted[first_value_rank]]
         profit_counter = actions_list_sorted[first_value_rank][1]
         spend_counter = actions_list_sorted[first_value_rank][0].value
         k = j
         while actions_list_sorted[k][0].value + spend_counter <= max_spend_per_customer and \
-                k < len(actions_list_sorted):
+                k < len(actions_list_sorted) - 1:
             if actions_list_sorted[k][1] + profit_counter > profit_counter and \
                     actions_list_sorted[k][0].value + spend_counter <= max_spend_per_customer:
                 best_option.append(actions_list_sorted[k])
                 profit_counter += actions_list_sorted[k][1]
                 spend_counter += actions_list_sorted[k][0].value
-                k += 1
+            k += 1
         if best_combination[2] < profit_counter:
             best_combination = (best_option, spend_counter, profit_counter)
 
@@ -43,8 +43,10 @@ def optimizatorloop(actions_list):
     actions_list_sorted = sortactionslist(actions_list)
 
     best_combination = (0, 0, 0)
-    for i in range(0, round(len(actions_list_sorted)/2)):
+    for i in range(0, 50):
         if optimizedalgo(actions_list_sorted, i)[2] > best_combination[2]:
             best_combination = optimizedalgo(actions_list_sorted, i)
+        else:
+            continue
 
     return best_combination
