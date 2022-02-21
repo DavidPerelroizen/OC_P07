@@ -46,7 +46,5 @@ def optimizatorloop(actions_list):
     for i in range(0, 50):
         if optimizedalgo(actions_list_sorted, i)[2] > best_combination[2]:
             best_combination = optimizedalgo(actions_list_sorted, i)
-        else:
-            continue
 
     return best_combination
