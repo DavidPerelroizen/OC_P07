@@ -11,7 +11,7 @@ def sortactionslist(actions_list):
     """
     actions_list_valuated = []
     for action in actions_list:
-        actions_list_valuated.append((action, action.finalvalue()))  # Step1 + Step2
+        actions_list_valuated.append((action, action.benefit, action.finalvalue()))  # Step1 + Step2
     actions_list_valuated = sorted(actions_list_valuated, key=lambda x: -x[1])  # Step3
     return actions_list_valuated  # Step4
 
@@ -21,15 +21,15 @@ def optimizedalgo(actions_list_sorted, first_value_rank):
 
     for j in range(first_value_rank + 1, len(actions_list_sorted)):
         best_option = [actions_list_sorted[first_value_rank]]
-        profit_counter = actions_list_sorted[first_value_rank][1]
+        profit_counter = actions_list_sorted[first_value_rank][0].finalvalue()
         spend_counter = actions_list_sorted[first_value_rank][0].value
         k = j
         while actions_list_sorted[k][0].value + spend_counter <= max_spend_per_customer and \
                 k < len(actions_list_sorted) - 1:
-            if actions_list_sorted[k][1] + profit_counter > profit_counter and \
+            if actions_list_sorted[k][0].finalvalue() + profit_counter > profit_counter and \
                     actions_list_sorted[k][0].value + spend_counter <= max_spend_per_customer:
                 best_option.append(actions_list_sorted[k])
-                profit_counter += actions_list_sorted[k][1]
+                profit_counter += actions_list_sorted[k][0].finalvalue()
                 spend_counter += actions_list_sorted[k][0].value
             k += 1
         if best_combination[2] < profit_counter:
