@@ -1,5 +1,4 @@
 from Models.constants import main_menu_list
-from Models.action import Action
 
 
 class View:
@@ -48,7 +47,7 @@ Benefit after two years: {best_combination[2]} euros
         sum of the final values of each action in the list
         :return: print displaying the information about the best option
         """
-        print(f"""
+        print("""
         ------------------------------------------------------
                     FINAL RECOMMENDATION OPTIMIZED
         ------------------------------------------------------
