@@ -73,7 +73,7 @@ def optimizatorloop(actions_list):
     best_combination = (0, 0, 0)  # Initialize the output tuple
 
     # The loop below will test the combinations for different starting points in the actions list and return the best
-    for i in range(0, 50):
+    for i in range(0, round(len(actions_list)*0.05)):
         if optimizedalgo(actions_list_sorted, i)[2] > best_combination[2]:
             best_combination = optimizedalgo(actions_list_sorted, i)
 
