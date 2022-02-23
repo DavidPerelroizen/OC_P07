@@ -55,6 +55,15 @@ pip install flake8-html
 
 ## Usage
 
+### Select the dataset
+
+Open the main.py file and update the path to the targeted csv dataset.
+```bash
+def main():
+    view = View()
+    path = "csv_db/dataset1_Python+P7.csv"  # To be updated depending on the targeted dataset
+```
+
 ### Launch the program
 
 Use your terminal to trigger the program by executing the main.py file
