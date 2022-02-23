@@ -10,15 +10,18 @@ class View:
         and the sum of the final.value() of each action in the list
         :return: print below
         """
+        print("""
+        ------------------------------------------------------
+                    FINAL RECOMMENDATION BRUTE
+        ------------------------------------------------------
+        Actions to purchase: """)
+        for action in best_combination[0]:
+            action.displayaction()
         print(f"""
-------------------------------------------------------
-            FINAL RECOMMENDATION BRUTE
-------------------------------------------------------
-Actions to purchase: {best_combination[0]}
-Initial investment: {best_combination[1]} euros
-Benefit after two years: {best_combination[2]} euros
-------------------------------------------------------
-""")
+        Initial investment: {best_combination[1]} euros
+        Benefit after two years: {best_combination[2]} euros
+        ------------------------------------------------------
+        """)
 
     def displaymainmenu(self):
         """
