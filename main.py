@@ -1,7 +1,7 @@
 from View.views import View
 from Models.actionDB import ActionDB
 from Controller.bruteforce import findallcombinations, combinationranking
-from Controller.optimized import optimizedalgo, optimizatorloop
+from Controller.optimized import optimizatorloop
 
 
 def main():

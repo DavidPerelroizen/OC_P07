@@ -1,4 +1,3 @@
-from Models.action import Action
 from Models.constants import max_spend_per_customer
 
 

@@ -54,5 +54,3 @@ def combinationranking(combinations_list):
         combinations_ranking.append((actions_list, initial_investment, combination_benefit))
     combinations_ranking_final = sorted(combinations_ranking, key=lambda x: -x[2])
     return combinations_ranking_final
-
-
