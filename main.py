@@ -6,7 +6,7 @@ from Controller.optimized import optimizatorloop
 
 def main():
     view = View()
-    path = "csv_db/dataset1_Python+P7.csv"  # To be updated depending on the targeted dataset
+    path = "csv_db/dataset2_Python+P7.csv"  # To be updated depending on the targeted dataset
 
     # Transforms the CSV file into an ActionDB object and extracts the data
     action_db = ActionDB(path)
