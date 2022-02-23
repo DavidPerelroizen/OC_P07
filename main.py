@@ -1,6 +1,6 @@
 from View.views import View
 from Models.actionDB import ActionDB
-from Controller.bruteforce import findallcombinations, combinationranking
+from Controller.bruteforce2 import findbestcombination
 from Controller.optimized import optimizatorloop
 
 
@@ -17,8 +17,7 @@ def main():
 
     # Bruteforce execution
     if user_choice == 'B':
-        combinations_list = findallcombinations(actions_list)
-        best_option = combinationranking(combinations_list)[0]
+        best_option = findbestcombination(actions_list)
         view.displaybestcombination(best_option)
 
     # Optimized algorithm execution
